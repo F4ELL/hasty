@@ -1,12 +1,20 @@
 import { Container } from "./styles"
 import logoImg from '../../assets/images/logo.png'
-import { Button } from "../Button"
 
-export const Header = () => {
+interface THeaderProps {
+    onOpenNewRequestModal: () => void
+}
+
+export const Header = ({ onOpenNewRequestModal }: THeaderProps) => {
+
     return (
         <Container>
             <img src={logoImg} alt="Hasty" />
-            <Button btnText='New Request' />
+            <button onClick={onOpenNewRequestModal}>
+                New Request
+            </button>
+
+            
         </Container>
     )
 }
